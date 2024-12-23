@@ -1,0 +1,19 @@
+name = 'Termeul'
+license = 'MIT'
+licenselink = 'https://github.com/JoogsWasTaken/termeul/LICENSE'
+description = 'A Hugo theme made for modern owls'
+
+# The home page of the theme, where the source can be found
+homepage = 'https://github.com/JoogsWasTaken/termeul'
+
+# If you have a running demo of the theme
+demosite = 'https://eulenbu.de'
+
+# Taxonomy terms
+tags = ['blog', 'personal', 'responsive', 'code', 'minimalist']
+features = ['single-column', 'blog', 'favicon', 'accessibility']
+
+# If the theme has a single author
+[author]
+  name = 'Maximilian Jugl'
+  homepage = 'https://eulenbu.de'

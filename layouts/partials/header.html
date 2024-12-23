@@ -1,0 +1,12 @@
+<nav class="nav nav-main">
+  <ul>
+    <li class="li-no-marker">
+      <h1 class="page-logo">
+        <a href="{{ site.BaseURL }}">{{ site.Title }}</a>
+      </h1>
+    </li>
+    {{ range site.Menus.main }}
+      <li><a href="{{ .PageRef | absURL }}">{{ .Name }}</a></li>
+    {{ end }}
+  </ul>
+</nav>

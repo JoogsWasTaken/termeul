@@ -1,0 +1,86 @@
+{{- define "partials/inline/getpagetitle.html" }}
+  {{- $pageTitle := site.Title }}
+  {{- if not .IsHome }}
+    {{- $pageTitle = printf
+      "%s | %s" .Title site.Title
+    }}
+  {{- end }}
+  {{- return $pageTitle }}
+{{- end }}
+{{- define "partials/inline/getpagedescription.html" }}
+  {{- $pageDescription := "" }}
+  {{- with
+    or .Description .Summary site.Params.description | plainify | htmlUnescape
+  }}
+    {{- $pageDescription = trim . "\n\r\t" }}
+  {{- end }}
+  {{- return $pageDescription }}
+{{- end }}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>
+  {{- block "title" . }}
+    {{ partialCached "inline/getpagetitle.html" . . }}
+  {{- end }}
+</title>
+<!-- stylesheets -->
+<link rel="stylesheet" href="{{ "css/termeul.css" | absURL }}" />
+<link rel="stylesheet" href="{{ "css/custom.css" | absURL }}" />
+<!-- basic meta -->
+<meta
+  name="description"
+  content="{{ partialCached "inline/getpagedescription.html" . . }}"
+/>
+{{- with or .Params.tags site.Params.tags }}
+  <meta name="keywords" content="{{ delimit . "," }}" />
+{{- end }}
+<!-- opengraph -->
+<meta
+  property="og:title"
+  content="{{ partialCached "inline/getpagetitle.html" . . }}"
+/>
+<meta
+  property="og:description"
+  content="{{ partialCached "inline/getpagedescription.html" . . }}"
+/>
+<meta property="og:url" content="{{ .Permalink }}" />
+<!-- twitter -->
+<meta name="twitter:card" content="summary" />
+<meta
+  name="twitter:title"
+  content="{{ partialCached "inline/getpagetitle.html" . . }}"
+/>
+<meta
+  name="twitter:description"
+  content="{{ partialCached "inline/getpagedescription.html" . . }}"
+/>
+<!-- apple -->
+<meta
+  name="apple-mobile-web-app-title"
+  content="{{ partialCached "inline/getpagetitle.html" . . }}"
+/>
+<!-- favicon -->
+{{- if os.FileExists "static/favicon.ico" }}
+  <link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}" />
+{{- end }}
+{{- if os.FileExists "static/favicon-96x96.png" }}
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="96x96"
+    href="{{ "favicon-96x96.png" | absURL }}"
+  />
+{{- end }}
+{{- if os.FileExists "static/favicon.svg" }}
+  <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | absURL }}" />
+{{- end }}
+{{- if os.FileExists "static/apple-touch-icon.png" }}
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="{{ "apple-touch-icon.png" | absURL }}"
+  />
+{{- end }}
+{{- if os.FileExists "static/site.webmanifest" }}
+  <link rel="manifest" href="{{ "site.webmanifest" | absURL }}" />
+{{- end }}
