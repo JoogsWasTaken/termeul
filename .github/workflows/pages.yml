@@ -32,4 +32,4 @@ jobs:
       - name: Deploy docs
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: termeul/public
+          folder: termeul/exampleSite/public
