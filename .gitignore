@@ -3,6 +3,10 @@
 /resources/_gen/
 /assets/jsconfig.json
 hugo_stats.json
+exampleSite/public/
+exampleSite/resources/_gen/
+exampleSite/assets/jsconfig.json
+exampleSite/hugo_stats.json
 
 # Executable may be added to repository
 hugo.exe
@@ -11,6 +15,7 @@ hugo.linux
 
 # Temporary lock file while building
 /.hugo_build.lock
+exampleSite/.hugo_build.lock
 
 # Logs
 logs
