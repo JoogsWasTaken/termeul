@@ -7,7 +7,7 @@ description = 'A Hugo theme made for modern owls'
 homepage = 'https://github.com/JoogsWasTaken/termeul'
 
 # If you have a running demo of the theme
-demosite = 'https://eulenbu.de'
+demosite = 'https://joogswastaken.github.io/termeul/'
 
 # Taxonomy terms
 tags = ['blog', 'personal', 'responsive', 'code', 'minimalist']

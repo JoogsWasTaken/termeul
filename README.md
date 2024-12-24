@@ -14,7 +14,7 @@ Either of these two lines will work.
 
 ```
 git submodule add https://github.com/JoogsWasTaken/termeul.git themes/termeul
-git clone https://github.com/JoogsWasTaken/termeul themes/termeul
+git clone https://github.com/JoogsWasTaken/termeul.git themes/termeul
 ```
 
 Then add this theme to your `hugo.toml`.
