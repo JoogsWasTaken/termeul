@@ -6,7 +6,7 @@ disableKinds = ["taxonomy", "term"]
 
 [[menus.main]]
 name = 'Posts'
-pageRef = '/posts'
+pageRef = 'posts'
 weight = 10
 
 [markup.goldmark.renderer]
